@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  width:100px;
+  height:100px;
+  background:rgb(195, 122, 184);
+  position:absolute;
+  animation:move 2s infinite;
+}
+
+@keyframes move{
+  0%{top:0; left:0;}
+  25%{top:0; left:200px;}
+  50%{top:200px; left:200px;}
+  75%{top:200px; left:0;}
+  100%{top:0; left:0;}
+}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
