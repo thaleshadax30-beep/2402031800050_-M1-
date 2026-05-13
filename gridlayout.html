@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      background: #aac6f0;
+      padding: 20px;
+    }
+
+    .container{
+      display: grid;
+      grid-template-columns: 3fr 1.3fr;
+      grid-template-rows: 80px 320px 80px;
+      gap: 15px;
+    }
+
+    .box{
+      background: #b88aed;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 4px solid #f5f0dc;
+    }
+
+    .header{
+      grid-column: 1 / 3;
+    }
+
+    .main{
+      grid-row: 2;
+    }
+
+    .sidebar{
+      display: grid;
+      gap: 15px;
+    }
+
+    .footer{
+      grid-column: 1 / 3;
+    }
+
+    .side-item{
+      background: #b88aed;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 4px solid #f5f0dc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="box header">HTML</div>
+
+    <div class="box main">CSS</div>
+
+    <div class="sidebar">
+      <div class="side-item">Java</div>
+      <div class="side-item">Java script</div>
+      <div class="side-item">Python</div>
+    </div>
+
+    <div class="box footer">Jquery</div>
+
+  </div>
+
+</body>
+</html>
