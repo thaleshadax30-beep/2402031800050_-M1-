@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find largest number in array</title>
+</head>
+<body>
+    <h1>Find largest number in array</h1>
+    <script>
+        var arr = [3];
+        arr[0] = prompt("Enter a First element:");
+        arr[1] = prompt("Enter a Second element:");
+        var largest = arr[0];
+        if(arr[1] > largest){
+            largest = arr[1];
+        }
+        if(arr[2] > largest){
+            largest = arr[2];
+        }
+            document.write("Largest element is: " + largest);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript For loop example</title>
+</head>
+<body>
+    <h1>This is for loop</h1>
+    <script>
+        
+       
+        for(let i=1;i<=10;i++) {
+            
+        document.write("<br>");
+        document.write(i);
+            
+        }
+    
+
+    </script>
+    <h2> This is a while loop</h2>
+    <script>
+        let i = 0;
+        while(i <= 10 )
+        {
+            document.write(i + "<br>")
+            i = i + 2;
+        }
+
+    </script>
+    <h3> This is do while loop</h3>
+      <script>
+        i = 1;
+        num = 5;
+        do {
+            document.write(num + "x" + i + "=" + (num*i)+ "<br>")
+            i++;
+        }
+        while
+            (i<=10);
+        
+
+      </script>
+
+      <h1> Calculate total</h1>
+      <script>
+        var total = 0;
+        var average;
+        for(let i=0;i <=5;i++) {
+            var marks = prompt("Enter your mark SUBJECT "+(i+1) + ":");
+            total += parentInt(marks)
+        }
+        average = total/5;
+        document.write("total marks:"+ total);
+        document.write("<br>");
+        document.write("Average marks" + average);
+        
+
+      </script>
+    
+    
+</body>
+</html>

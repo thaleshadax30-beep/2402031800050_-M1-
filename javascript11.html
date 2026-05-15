@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuction call example</title>
+
+</head>
+<body>
+    <script>
+        function foo (p1)
+        {
+            if (typeof(p1) == "number")
+            return 0;
+            else
+            if (typeof(p1) == "string")
+            return "zero";
+        }
+        foo(1);
+        foo("abc");
+        foo();
+        document.write(foo(1));
+        document.write("<br>")
+        document.write(foo("abc"));
+        document.write("<br>")
+        document.write(foo());
+    </script>
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Function Example</title>
+</head>
+<body>
+
+<script>
+
+function sum()
+{
+    var s = 0;
+
+    for(var i = 0; i < arguments.length; i++)
+    {
+        s += Number(arguments[i]);
+    }
+
+    return s;
+}
+
+var a = sum(1, 2, 3);
+var b = sum(1, 2, 3, 4, 5);
+var c = sum(1, 2, "3", 4, 5);
+
+document.write(a);
+document.write("<br>");
+
+document.write(b);
+document.write("<br>");
+
+document.write(c);
+document.write("<br>");
+
+</script>
+</body>
+</html>

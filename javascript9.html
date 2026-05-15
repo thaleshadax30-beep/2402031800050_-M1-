@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate marks</title>
+</head>
+<body>
+    <h1>Calculate Average Marks</h1>
+    <script>
+        var total = 0;
+        var arr = [];
+        for(var i = 0; i < 5; i++){
+            var marks = prompt("Please enter marks for subject " + (i+1) + ":");
+            document.write("Marks for subject " + (i+1) + ": " + marks);
+            document.write("<br>");
+            arr[i] = parseInt(marks);
+            total += arr[i];
+        }
+        document.write("Total marks: " + total);
+        document.write("<br>");
+    </script>
+</body>
+</html>

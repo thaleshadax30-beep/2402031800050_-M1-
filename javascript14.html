@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM PIN Checking</title>
+</head>
+<body>
+    <h1>ATM PIN Checking</h1>
+    <script>
+        prompt("Welcome to the ATM. Please enter your PIN to continue.");
+        var correctPin = "752292";
+        var attempts = 3;
+        var userPin;
+
+        while (attempts > 0) {
+            userPin = prompt("Please enter your ATM PIN:");
+            if (userPin === correctPin) {
+                document.write("PIN accepted. Access granted.");
+                break;
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    document.write("Incorrect PIN. You have " + attempts + " attempt(s) left.<br>");
+                } else {
+                    document.write("Incorrect PIN. No attempts left. Access denied.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
