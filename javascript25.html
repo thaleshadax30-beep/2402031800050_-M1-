@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation using regexp</title>
+</head>
+<body>
+    <input type="text" id="Mytext" placeholder="Enter Email">
+
+    <button onclick="CheckMail()">Check</button>
+
+    <script>
+        function CheckMail()
+        {
+            var a = document.getElementById("Mytext").value;
+            var pattern = "^[\\w-_\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]$";
+            var regex = new RegExp(pattern);
+            if(regex.test(a))
+            {
+                alert("Valid");
+            }
+            else
+            {
+                alert("invalid");
+            }
+        }
+    </script>
+    
+</body>
+</html>
