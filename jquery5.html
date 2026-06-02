@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ font-family: Arial}
+        #box {
+            background-color: lightskyblue;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Events</h1>
+    <action="" id="sform">
+        
+        <label for="name">Name:</label><br>
+        <input type="text" id="name"><br>
+
+        <label for="class">Class:</label><br>
+        <input type="text" id="class"><br>
+
+        <label for="">Country:</label><br>
+        <select id="scountry">
+        <option value="India">India</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Uk">Uk</option>
+        <option value="Sri lanka">Sri lanka</option>
+        <option value="Bangladesh">Bangladesh</option>
+        
+    </select>
+    <br><br>
+        
+        <input type="submit">
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+
+    $('#name ,#class,#scountry').focus(function() {
+
+        $(this).css('background-color', 'lime');
+
+    });
+
+    $('#name ,#class,#scountry').blur(function() {
+
+        $(this).css('background-color', '');
+
+    });
+
+    $('#scountry').change(function() {
+
+        $(this).css('background-color', 'blue');
+
+    });
+
+    $('#name,#class').select(function() {
+
+        $(this).css('background-color', 'red');
+
+    });
+
+    $('#sform').submit(function() {
+
+        console.log("form submitted")
+        alert("Form submitted")
+
+    });
+
+
+});
+    </script>
+</body>
+</html>
