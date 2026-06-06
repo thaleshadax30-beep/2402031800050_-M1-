@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard event</title>
+    <style>
+        body{ font-family: Arial}
+        #box {
+            background-color: lightskyblue;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1> Welcome boys : learn Mouse event</h1>
+    
+    <div id="box" class="test">
+        <h2>Test box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex, alias itaque quibusdam excepturi, autem molestiae reiciendis, suscipit repellendus magnam numquam animi? Fugiat deleniti aperiam debitis, culpa alias consequatur id?</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('body').keypress(function(){
+                    $(this).css('background-color','pink');
+                })
+
+                 $('body').keyup(function(){
+                    $(this).css('background-color','purple');
+                })
+
+                 $('body').keydown(function(){
+                    $(this).css('background-color','pink');
+                })
+            })
+        </script>
+    
+</body>
+</html>
