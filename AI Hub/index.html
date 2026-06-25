@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hub - Discover AI Tools</title>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* Navbar */
+nav{
+    background:#111827;
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    background:linear-gradient(to right,#2563eb,#7c3aed);
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:700px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#e5e7eb;
+}
+
+/* Featured Tools */
+.tools{
+    padding:60px 10%;
+}
+
+.tools h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:38px;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:80px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:gray;
+}
+
+/* Footer */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">AI Hub</div>
+    <ul>
+    <a href="index.html" target="_main">Home</a>
+    <a href="tools.html" target="_main">Tools</a>
+    <a href="favorites.html" target="_main">Favorites</a>
+    <a href="about.html" target="_main">About</a>
+    <a href="contact.html" target="_main">Contact</a>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Discover The Best AI Tools</h1>
+
+    <p>
+        Explore powerful AI tools for coding, writing,
+        image generation, productivity, and learning.
+    </p>
+
+    
+</section>
+
+<!-- Featured Tools -->
+<section class="tools">
+
+    <h2>Featured AI Tools</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <a href="https://chatgpt.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="ChatGpt">
+    </a>
+
+            <h3>ChatGPT</h3>
+            <p>AI chatbot for writing, coding and learning.</p>
+        </div>
+
+        <div class="card">
+            <a href="https://gemini.google.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="">
+            </a>
+            <h3>Gemini</h3>
+            <p>Google's AI assistant for productivity.</p>
+        </div>
+
+        <div class="card">
+            <a href="https://www.midjourney.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712116.png" alt="">
+            </a>
+            <h3>Midjourney</h3>
+            <p>Create stunning AI-generated images.</p>
+        </div>
+
+        <div class="card">
+            <a href="https://claude.ai" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712139.png" alt="">
+            </a>
+            <h3>Claude AI</h3>
+            <p>Smart AI assistant for writing, coding, and research.</p>
+        </div>
+
+    </div>
+    
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 AI Hub | Developed by Dax Thalesha</p>
+</footer>
+
+<a href="script.js"></a>
+
+</body>
+</html>

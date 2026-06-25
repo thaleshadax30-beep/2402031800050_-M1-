@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools - AI Hub</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#details{
+    margin-top:20px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🤖 AI Tools Directory</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>ChatGPT</h2>
+        <p>AI chatbot for learning, coding, and writing.</p>
+        <button onclick="showDetails('ChatGPT')">
+            View Details
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>Gemini</h2>
+        <p>Google AI assistant for productivity.</p>
+        <button onclick="showDetails('Gemini')">
+            View Details
+        </button>
+    </div>
+
+    
+    <div class="card">
+        <h2>Midjourney</h2>
+        <p>Create stunning AI-generated images</p>
+        <button onclick="showDetails('Midjourney')">
+            View Details
+        </button>
+    </div>
+
+
+    <div class="card">
+        <h2>Claude AI</h2>
+        <p>Create designs and presentations with AI.</p>
+        <button onclick="showDetails('Claude AI')">
+            View Details
+        </button>
+    </div>
+
+
+    <div id="details"></div>
+
+</div>
+
+<script>
+
+function showDetails(tool){
+
+let details =
+document.getElementById("details");
+
+details.style.display = "block";
+
+if(tool === "ChatGPT"){
+    details.innerHTML =
+    "<h2>ChatGPT</h2><p>ChatGPT helps with coding, learning, writing, and answering questions.</p>";
+}
+
+else if(tool === "Gemini"){
+    details.innerHTML =
+    "<h2>Gemini</h2><p>Gemini is Google's AI assistant for research and productivity.</p>";
+}
+
+
+
+else if(tool === "Midjourney"){
+    details.innerHTML =
+    "<h2>Midjourney</h2><p>Midjourney help for artistic, photorealistic, and cinematic styles with strong handling.</p>";
+}
+
+
+else if(tool === "Claude AI"){
+    details.innerHTML =
+    "<h2>Claude AI</h2><p>Claude AI helps with writing, coding, research, and problem-solving.</p>";
+}
+
+}
+
+</script>
+
+</body>
+</html>

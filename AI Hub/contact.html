@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - AI Hub</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Navbar */
+nav{
+    background:#111827;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+}
+
+/* Contact Section */
+.contact-container{
+    max-width:700px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-container h1{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.contact-container p{
+    text-align:center;
+    margin-bottom:25px;
+    color:#666;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#message{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* Contact Info */
+.contact-info{
+    margin-top:30px;
+    text-align:center;
+}
+
+.contact-info p{
+    margin:8px 0;
+}
+
+/* Footer */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.contact-container{
+    margin:20px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+
+
+<!-- Contact Form -->
+<div class="contact-container">
+
+    <h1>Contact Us</h1>
+
+    <p>Have questions or suggestions? Send us a message.</p>
+
+    <form id="contactForm">
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea id="msg" rows="5" placeholder="Write your message"></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+        <p id="message"></p>
+
+    </form>
+
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+
+        <p>📧 Email: thalesadax60@gmail.com</p>
+        <p>📱 Phone: +91 9876543210</p>
+        <p>📍 Ahmedabad, Gujarat, India</p>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 AI Hub | All Rights Reserved</p>
+</footer>
+
+<script>
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let name =
+    document.getElementById("name").value.trim();
+
+    let email =
+    document.getElementById("email").value.trim();
+
+    let msg =
+    document.getElementById("msg").value.trim();
+
+    let result =
+    document.getElementById("message");
+
+    if(name === "" || email === "" || msg === ""){
+
+        result.style.color = "red";
+        result.innerHTML =
+        "Please fill all fields.";
+
+        return;
+    }
+
+    result.style.color = "green";
+    result.innerHTML =
+    "Message sent successfully!";
+
+    document.getElementById("contactForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>

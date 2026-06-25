@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hub - Favorites</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.add-section{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+input{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.add-btn{
+    padding:10px 15px;
+    background:#10b981;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.add-btn:hover{
+    background:#059669;
+}
+
+.tools-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:gray;
+    margin-bottom:15px;
+}
+
+.remove-btn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.remove-btn:hover{
+    background:#dc2626;
+}
+
+.clear-btn{
+    display:block;
+    margin:25px auto;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.clear-btn:hover{
+    background:#1d4ed8;
+}
+
+.empty{
+    text-align:center;
+    color:gray;
+    font-size:20px;
+}
+
+footer{
+    margin-top:40px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+@media(max-width:768px){
+    input{
+        width:100%;
+        margin-bottom:10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>❤️ AI Hub Favorites</h1>
+</header>
+
+<div class="container">
+
+    <h2>Save Your Favorite AI Tools</h2>
+
+    <div class="add-section">
+        <input
+        type="text"
+        id="toolInput"
+        placeholder="Enter AI Tool Name">
+
+        <button
+        class="add-btn"
+        onclick="addFavorite()">
+        Add Favorite
+        </button>
+    </div>
+
+    <button
+    class="clear-btn"
+    onclick="clearFavorites()">
+    Clear All Favorites
+    </button>
+
+    <div
+    class="tools-container"
+    id="favoritesList">
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 AI Hub | Favorites Page</p>
+</footer>
+
+<script>
+
+// Load favorites from Local Storage
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+// Display Favorites
+function displayFavorites(){
+
+let list =
+document.getElementById("favoritesList");
+
+list.innerHTML = "";
+
+if(favorites.length === 0){
+
+list.innerHTML =
+'<p class="empty">No Favorite AI Tools Added Yet.</p>';
+
+return;
+}
+
+favorites.forEach((tool,index)=>{
+
+list.innerHTML += `
+<div class="card">
+
+<h3>${tool}</h3>
+
+<p>
+Saved in your favorite AI tools list.
+</p>
+
+<button
+class="remove-btn"
+onclick="removeFavorite(${index})">
+Remove
+</button>
+
+</div>
+`;
+
+});
+
+}
+
+// Add Favorite
+function addFavorite(){
+
+let input =
+document.getElementById("toolInput");
+
+let toolName =
+input.value.trim();
+
+if(toolName === ""){
+
+alert("Please enter a tool name.");
+
+return;
+}
+
+if(favorites.includes(toolName)){
+
+alert("Tool already exists.");
+
+return;
+}
+
+favorites.push(toolName);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+input.value = "";
+
+displayFavorites();
+
+alert(toolName + " added successfully!");
+
+}
+
+// Remove One Favorite
+function removeFavorite(index){
+
+favorites.splice(index,1);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+displayFavorites();
+
+}
+
+// Clear All Favorites
+function clearFavorites(){
+
+if(confirm("Remove all favorites?")){
+
+favorites = [];
+
+localStorage.removeItem("favorites");
+
+displayFavorites();
+
+}
+
+}
+
+// Load Page
+displayFavorites();
+
+</script>
+
+</body>
+</html>
